@@ -158,14 +158,14 @@ Navigo.prototype = {
     root,
     clean
   },
-  navigate: function (path, absolute) {
+  navigate: function (path, absolute, useReplace) {
     var to;
 
     path = path || '';
     if (this._usePushState) {
       to = (!absolute ? this._getRoot() + '/' : '') + path.replace(/^\/+/, '/');
       to = to.replace(/([^:])(\/{2,})/g, '$1/');
-      history[this._paused ? 'replaceState' : 'pushState']({}, '', to);
+      history[(useReplace || this._paused) ? 'replaceState' : 'pushState']({}, '', to);
       this.resolve();
     } else if (typeof window !== 'undefined') {
       path = path.replace(new RegExp('^' + this._hash), '');

@@ -1,9 +1,13 @@
 {
-  "name": "navigo",
+  "name": "@nekr/navigo",
   "version": "4.5.1",
   "description": "A simple vanilla JavaScript router with a fallback for older browsers",
   "main": "lib/navigo.js",
   "jsnext:main": "src/index.js",
+  "files": [
+    "lib/",
+    "src/"
+  ],
   "dependencies": {},
   "author": {
     "name": "Krasimir Tsonev",
